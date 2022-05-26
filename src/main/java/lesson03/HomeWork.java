@@ -9,7 +9,9 @@ public class HomeWork {
      */
     public static void numbers() {
         for (int i = 0; i < 100; i++) {
-            System.out.println(i);
+            if (i % 2 == 1) {
+                System.out.println(i);
+            }
         }
     }
 
@@ -32,7 +34,9 @@ public class HomeWork {
         int number = 0;
         int res = 1;
         while (number < 100) {
-            System.out.println(number);
+            if (number % 2 == 1) {
+                System.out.println(number);
+            }
             number += 1;
         }
 
@@ -52,7 +56,9 @@ public class HomeWork {
         int number = 0;
         int res = 1;
         do {
-            System.out.println(number);
+            if (number % 2 == 1) {
+                System.out.println(number);
+            }
             number++;
         } while (number <= 99);
 

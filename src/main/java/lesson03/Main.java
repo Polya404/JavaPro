@@ -4,10 +4,10 @@ import static lesson03.HomeWork.*;
 
 public class Main {
     public static void main(String[] args) {
-        numbers();
+//        numbers();
 //        factorial(6);
 //        task12while(5);
-//        task12doWhile(4);
+        task12doWhile(4);
 //        pow(3, 3);
 //        subsequence();
 //        mult(2);
