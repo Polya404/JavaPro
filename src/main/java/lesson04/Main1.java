@@ -1,20 +1,20 @@
 package lesson04;
 
 public class Main1 {
-    private static final double OdessaToKrivoeOzero = 178;
-    private static final double KrivoeOzeroToZhashkow = 152.8;
-    private static final double ZhashkowToKiev = 148.2;
+    static double ODESSA_TO_KRIVOE_OZERO = 178;
+    static double KRIVOE_OZERO_TO_ZHASHKOW = 152.8;
+    static double ZHASHKOW_TO_KIEV = 148.2;
 
 
     public static void main(String[] args) {
         double fuelCost = Double.parseDouble(args[0]);
         double allFuelNeeded = 0;
         Car car = new Car(60, 8);
-        allFuelNeeded = car.getVolume() - car.remainder(OdessaToKrivoeOzero) + car.getVolume() -
-                car.remainder(KrivoeOzeroToZhashkow) + car.getVolume() - car.remainder(ZhashkowToKiev);
+        allFuelNeeded = car.getVolume() - car.remainder(ODESSA_TO_KRIVOE_OZERO) + car.getVolume() -
+                car.remainder(KRIVOE_OZERO_TO_ZHASHKOW) + car.getVolume() - car.remainder(ZHASHKOW_TO_KIEV);
         System.out.println(allFuelNeeded + " надо всего топлива и его стоимость " + fuelCost * allFuelNeeded +
                 " если маршрут у нас Одесса - Киев");
         System.out.println(fuelCost * allFuelNeeded + " будет стоить полная поездка");
-        System.out.println("остаток топлива в пункте назначения " + car.refuel(OdessaToKrivoeOzero + KrivoeOzeroToZhashkow + ZhashkowToKiev));
+        System.out.println("остаток топлива в пункте назначения " + car.refuel(ODESSA_TO_KRIVOE_OZERO + KRIVOE_OZERO_TO_ZHASHKOW + ZHASHKOW_TO_KIEV));
     }
 }
