@@ -1,6 +1,6 @@
 package lesson05;
 
-public class University {
+public class Students {
     private int id;
     private String firstName;
     private String lastName;
@@ -11,8 +11,8 @@ public class University {
     private String faculty;
     private int course;
     private String groupName;
-    public static University[] students = new University[10];
-    private static int count = 0;
+
+
 
     @Override
     public String toString() {
@@ -107,10 +107,10 @@ public class University {
         this.groupName = groupName;
     }
 
-    public University() {
+    public Students() {
     }
 
-    public University(int id, String firstName, String lastName, String patronymic, int yearOfBrith, String address, String number, String faculty, int course, String groupName) {
+    public Students(int id, String firstName, String lastName, String patronymic, int yearOfBrith, String address, String number, String faculty, int course, String groupName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -123,48 +123,8 @@ public class University {
         this.groupName = groupName;
     }
 
-    public static University[] addStudentsToList(University obj) {
-        int id = obj.getId();
-        String firstName = obj.getFirstName();
-        String lastName = obj.getLastName();
-        String patronymic = obj.getPatronymic();
-        int yearOfBrith = obj.getYearOfBrith();
-        String address = obj.getAddress();
-        String number = obj.getNumber();
-        String faculty = obj.getFaculty();
-        int course = obj.getCourse();
-        String groupName = obj.getGroupName();
-        students[count] = new University(id, firstName, lastName, patronymic, yearOfBrith, address, number, faculty, course, groupName);
-        count++;
-        return students;
-    }
 
-    public static void printFacultyList(String faculty, University[] students) {
-        for (University student : students)
-            if (faculty.equals(student.getFaculty())) {
-                System.out.println(student);
-            }
-    }
 
-    public static void printFacultyAndCourseList(String faculty, int course, University[] students) {
-        for (University student : students)
-            if (faculty.equals(student.getFaculty()) & course == student.getCourse()) {
-                System.out.println(student);
-            }
-    }
 
-    public static void printOlderThen(int year, University[] students) {
-        for (University student : students)
-            if (year > student.getYearOfBrith()) {
-                System.out.println(student);
-            }
-    }
-
-    public static void printGroupList(String groupName, University[] students) {
-        for (University student : students)
-            if (groupName.equals(student.getGroupName())) {
-                System.out.println(student);
-            }
-    }
 
 }
