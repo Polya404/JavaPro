@@ -1,9 +1,9 @@
 package lesson04;
 
 public class Main1 {
-    static double ODESSA_TO_KRIVOE_OZERO = 178;
-    static double KRIVOE_OZERO_TO_ZHASHKOW = 152.8;
-    static double ZHASHKOW_TO_KIEV = 148.2;
+    static final double ODESSA_TO_KRIVOE_OZERO = 178;
+    static final double KRIVOE_OZERO_TO_ZHASHKOW = 152.8;
+    static final double ZHASHKOW_TO_KIEV = 148.2;
 
 
     public static void main(String[] args) {
