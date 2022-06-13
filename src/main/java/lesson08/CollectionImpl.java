@@ -90,13 +90,13 @@ public class CollectionImpl implements Collection {
         for (int i = 0; i < str.size(); i++) {
             for (int j = 0; j < str.size(); j++) {
                 if (str.get(i).contains(array[j])) {
-                    return true;
+
                 } else {
                     return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     @Override
