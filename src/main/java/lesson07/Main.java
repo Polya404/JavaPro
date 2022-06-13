@@ -12,7 +12,6 @@ public class Main {
         stringCollection.add(3,"3");
         stringCollection.add(1,"1");
         stringCollection.add("123");
-        stringCollection.printArray();
         stringCollection.delete("2");
         stringCollection.printArray();
         System.out.println(stringCollection.get(2));

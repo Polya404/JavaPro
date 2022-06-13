@@ -9,8 +9,7 @@ public class CollectionImpl implements Collection {
         if (size == array.length) {
             grow();
         }
-        array[size] = value;
-        size++;
+        array[size++] = value;
         return true;
     }
 
@@ -41,22 +40,19 @@ public class CollectionImpl implements Collection {
 
     @Override
     public boolean delete(String value) {
-        String[] newArr = null;
         String elementToBeDeleted = value;
-
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i].equals(elementToBeDeleted)) {
-                newArr = new String[array.length - 1];
-                for (int index = 0; index < i; index++) {
-                    newArr[index] = array[index];
-                }
-                for (int j = i; j < array.length - 1; j++) {
-                    newArr[j] = array[j + 1];
-                }
-                break;
+        int foundIndex = 0;
+        for (int i = 0; i < size - 1; i++) {
+            if (array[i] == elementToBeDeleted || array[i].equals(elementToBeDeleted)) {
+                array[i] = null;
+                foundIndex = i;
             }
         }
-        this.array = newArr;
+        for (int j = foundIndex + 1; j < size; j++) {
+            array[j - 1] = array[j];
+            array[j] = null;
+        }
+
         size--;
         return true;
     }
@@ -89,9 +85,7 @@ public class CollectionImpl implements Collection {
     public boolean equals(Collection str) {
         for (int i = 0; i < str.size(); i++) {
             for (int j = 0; j < str.size(); j++) {
-                if (str.get(i).contains(array[j])) {
-
-                } else {
+                if (!(str.get(i).contains(array[j]))) {
                     return false;
                 }
             }
@@ -111,13 +105,13 @@ public class CollectionImpl implements Collection {
         return size;
     }
 
-    private String[] grow() {
+    private boolean grow() {
         String[] array = new String[(int) (this.array.length * 1.5)];
         for (int i = 0; i < this.array.length; i++) {
             array[i] = this.array[i];
         }
         this.array = array;
-        return this.array;
+        return true;
     }
 
 }
