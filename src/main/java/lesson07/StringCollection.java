@@ -59,6 +59,7 @@ public class StringCollection implements StringArray {
             }
         }
         this.array = newArr;
+        size--;
         return true;
     }
 
@@ -79,6 +80,7 @@ public class StringCollection implements StringArray {
             }
         }
         this.array = newArr;
+        size--;
         return true;
     }
 
