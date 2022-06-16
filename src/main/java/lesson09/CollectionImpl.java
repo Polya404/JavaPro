@@ -131,11 +131,4 @@ public class CollectionImpl implements CustomCollection {
         return true;
     }
 
-    public void printLinkList(){
-        Node p;
-        for(p=first;p!=null;p=p.next){
-            System.out.print(p.element+"--->");
-        }
-        System.out.println();
-    }
 }
