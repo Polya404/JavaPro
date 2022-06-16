@@ -40,6 +40,7 @@ public class CollectionImpl implements CustomCollection {
         for (int i = 0; i < strColl.size; i++) {
             add(strColl.get(i));
         }
+        size += strColl.size;
         return true;
     }
 
