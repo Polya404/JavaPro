@@ -21,5 +21,8 @@ public class Main {
         collection.delete("Str6");
         System.out.println(collection.contains("Str2"));
         collection.addAll(collection2);
+        collection.printLinkList();
+        System.out.println(collection.size());
+
     }
 }

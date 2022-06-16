@@ -40,7 +40,6 @@ public class CollectionImpl implements CustomCollection {
         for (int i = 0; i < strColl.size; i++) {
             add(strColl.get(i));
         }
-        size += strColl.size;
         return true;
     }
 
@@ -130,5 +129,13 @@ public class CollectionImpl implements CustomCollection {
     @Override
     public boolean trim() {
         return true;
+    }
+
+    public void printLinkList(){
+        Node p;
+        for(p=first;p!=null;p=p.next){
+            System.out.print(p.element+"--->");
+        }
+        System.out.println();
     }
 }
