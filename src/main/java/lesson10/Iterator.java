@@ -2,8 +2,6 @@ package lesson10;
 
 import lesson08.CollectionImpl;
 
-import java.util.function.Consumer;
-
 public interface Iterator<String> {
     String next();
 
