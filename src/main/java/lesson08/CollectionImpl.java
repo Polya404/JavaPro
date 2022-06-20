@@ -124,7 +124,7 @@ public class CollectionImpl implements Collection {
 
             @Override
             public boolean hasNext() {
-                return currentIndex < size && array[currentIndex] != null;
+                return currentIndex < size;
             }
 
             @Override
