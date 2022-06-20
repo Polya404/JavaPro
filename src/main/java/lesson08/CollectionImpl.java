@@ -1,8 +1,11 @@
 package lesson08;
 
+import lesson10.Iterator;
+
 public class CollectionImpl implements Collection {
     private String[] array = new String[10];
     private int size = 0;
+    private int currentIndex = 0;
 
     @Override
     public boolean add(String value) {
@@ -114,6 +117,43 @@ public class CollectionImpl implements Collection {
         return true;
     }
 
+
+    public Iterator<String> iterator() {
+        Iterator<String> it = new Iterator<String>() {
+
+
+            @Override
+            public boolean hasNext() {
+                return currentIndex < size && array[currentIndex] != null;
+            }
+
+            @Override
+            public String next() {
+                return array[currentIndex++];
+            }
+
+            @Override
+            public void remove() {
+                final String[] newArray = new String[array.length - 1];
+                int indexToRemove = currentIndex + 1;
+
+                System.arraycopy(array, 0, newArray, 0, indexToRemove);
+                System.arraycopy(array, indexToRemove + 1, newArray, indexToRemove, newArray.length - indexToRemove);
+
+                array = newArray;
+            }
+
+            @Override
+            public void forEach(CollectionImpl collection) {
+                while (collection.iterator().hasNext()) {
+                    System.out.println(iterator().next());
+                }
+            }
+
+
+        };
+        return it;
+    }
 }
 
 
