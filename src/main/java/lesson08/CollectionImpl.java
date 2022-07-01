@@ -21,7 +21,7 @@ public class CollectionImpl implements Collection {
         if (size == array.length) {
             grow();
         }
-        if (index > size + 1) {
+        if (index > size) {
             return false;
         }
         String[] result = new String[array.length + 1];

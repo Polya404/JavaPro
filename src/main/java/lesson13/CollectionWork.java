@@ -1,12 +1,9 @@
 package lesson13;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class CollectionWork {
 
@@ -23,11 +20,11 @@ public class CollectionWork {
         return true;
     }
 
-    public static Predicate<String> isLowerCase() {
+    private static Predicate<String> isLowerCase() {
         return s -> s.equals(s.toLowerCase());
     }
 
-    public static Predicate<String> length() {
+    private static Predicate<String> length() {
         return s -> s.length() == 4;
     }
 }
