@@ -50,7 +50,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>main.java.com.hillel.Run</mainClass>
+                                <mainClass>main.java.lesson14.NumberPrint</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
