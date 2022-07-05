@@ -9,23 +9,15 @@ public class LetterStars {
         }
     }
 
-    static void printPhraz(char[][][] arr) {
+    static void printPhraz(char[][][] arr, int len) {
         int count = 0;
-        char[][] pole = new char[arr[0].length][arr.length * arr[0][0].length + arr[0].length];;
-        for (int j = 0; j < arr.length; j ++){
+        char[][] pole = new char[arr[0].length][arr.length * arr[0][0].length + arr[0].length];
+        ;
+        for (int j = 0; j < arr.length; j++) {
             for (int i = 0; i < arr[0].length; i++) {
-                fillArrFromOther(pole[i], count, arr[0][i].length + count, arr[count][i]);
-                count++;
-                fillArrFromOther(pole[i], count * arr[0][i].length + count, 2 * arr[0][i].length + count, arr[count][i]);
-                count++;
-                fillArrFromOther(pole[i], count * arr[0][i].length + count, 3 * arr[0][i].length + count, arr[count][i]);
-                count++;
-                fillArrFromOther(pole[i], count * arr[0][i].length + count, 4 * arr[0][i].length + count, arr[count][i]);
-                count++;
-                fillArrFromOther(pole[i], count * arr[0][i].length + count, 5 * arr[0][i].length + count, arr[count][i]);
-                count++;
-                fillArrFromOther(pole[i], count * arr[0][i].length + count, 6 * arr[0][i].length + count, arr[count][i]);
-                count = 0;
+                for (int k = 0; k < len; k++) {
+                    fillArrFromOther(pole[i], k * arr[0][i].length + k, (k + 1) * arr[0][i].length + k, arr[k][i]);
+                }
             }
         }
         for (char[] row : pole) {

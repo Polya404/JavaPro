@@ -98,7 +98,8 @@ public class NumberPrint {
                     System.out.println("Enter only numbers");
             }
         }
-        printPhraz(res);
+        printPhraz(res, args.length);
+
     }
 
 }
