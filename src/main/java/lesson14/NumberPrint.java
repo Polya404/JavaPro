@@ -98,7 +98,12 @@ public class NumberPrint {
                     System.out.println("Enter only numbers");
             }
         }
-        printPhraz(res, args.length);
+        try {
+            printPhraz(res, args.length);
+        }catch (NullPointerException e){
+            e.getMessage();
+        }
+
 
     }
 
