@@ -11,8 +11,8 @@ public class Main {
         service.createStudent(new Student("Sofia Krasnova", "BT-179", "2019"));
 
 
-        //System.out.println(service.getStudentById(2));
-        System.out.println(service.getStudentByName("Egor Ivanov"));
-        //System.out.println(service.getAllStudents());
+        //System.out.println(service.getStudentById(4));
+        //System.out.println(service.getStudentByName("Egor Ivanov"));
+        System.out.println(service.getAllStudents());
     }
 }

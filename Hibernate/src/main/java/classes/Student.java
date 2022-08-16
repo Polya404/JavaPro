@@ -6,14 +6,14 @@ import javax.persistence.*;
 @Table(name = "students")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "FullName")
+    @Column(name = "full_name")
     private String fullName;
-    @Column(name = "GroupName")
+    @Column(name = "group_name")
     private String groupName;
-    @Column(name = "StartYear")
+    @Column(name = "start_year")
     private String startYear;
 
     public Student() {
@@ -47,5 +47,15 @@ public class Student {
 
     public void setStartYear(String startYear) {
         this.startYear = startYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", groupName='" + groupName + '\'' +
+                ", startYear='" + startYear + '\'' +
+                '}';
     }
 }

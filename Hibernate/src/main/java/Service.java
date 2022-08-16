@@ -16,22 +16,22 @@ public class Service {
 
     public List<Student> getAllStudents() {
         session.beginTransaction();
-        Query query = session.createQuery("from students");
+        Query query = session.createQuery("from Student");
         List<Student> list = (List<Student>) query.list();
         return list;
     }
 
     public List<Student> getStudentByName(String name) {
         session.beginTransaction();
-        Query query = session.createQuery("from students where FullName = 'FullName'");
-        query.setString("FullName", name);
+        Query query = session.createQuery("from Student where fullName = :fullName");
+        query.setString("fullName", name);
         List<Student> list = (List<Student>) query.list();
         return list;
     }
 
     public List<Student> getStudentById(long id) {
         session.beginTransaction();
-        Query query = session.createQuery("from students where id = 'id' ");
+        Query query = session.createQuery("from Student where id = :id");
         query.setLong("id", id);
         List<Student> list = (List<Student>) query.list();
         return list;
