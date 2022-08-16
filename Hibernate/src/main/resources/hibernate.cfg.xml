@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Assume hibernate is the database name -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/student?serverTimezone=UTC</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">rootroot</property>
+
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="connection.autocommit">true</property>
+		<property name="hbm2ddl.auto">create</property>
+		<!--		<property name="hbm2ddl.auto">update</property>-->
+		<!--		<property name="hbm2ddl.auto">validate</property>-->
+		<!--		<property name="hbm2ddl.auto">create-drop</property>-->
+
+		<!--		create :- create the schema, the data previously present (if there) in the schema is lost-->
+		<!--		update:- update the schema with the given values.-->
+		<!--		validate:- validate the schema. It makes no change in the DB.-->
+		<!--		create-drop:- create the schema with destroying the data previously present(if there).
+		It also drop the database schema when the SessionFactory is closed.-->
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">10</property>
+		<property name="current_session_context_class">thread</property>
+
+		<mapping class="classes.Student" />
+
+	</session-factory>
+</hibernate-configuration>
+
+
